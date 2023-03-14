@@ -1,10 +1,11 @@
 package com.example.prjgrannyapp
 
+import android.util.Log
+
+private var aName =  ArrayList<String>()
+private var aPassword= ArrayList<String>()
 class Login
 {
-    private var aName =  ArrayList<String>()
-    private var aPassword= ArrayList<String>()
-
     fun AddOldUsers()
     {
         aName.add("Granny")
@@ -17,6 +18,7 @@ class Login
     }
     fun AddNewUser(Name :String,Password:String)
     {
+        Log.d("AddNewUser","Name was :"+Name+" and Password was :"+Password)
         aName.add(Name)
         aPassword.add(Password)
     }

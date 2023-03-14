@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtName"
+        android:id="@+id/txtNameReg"
         android:layout_width="0dp"
         android:layout_height="54dp"
         android:layout_marginTop="87dp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/txtPassword"
+        android:id="@+id/txtPasswordReg"
         android:layout_width="0dp"
         android:layout_height="57dp"
         android:layout_marginTop="116dp"
