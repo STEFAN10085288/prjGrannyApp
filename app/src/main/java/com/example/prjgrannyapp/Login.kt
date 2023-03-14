@@ -9,23 +9,17 @@ private var aPassword= ArrayList<String>()
 class Login
 {
 
-    private fun Login()
-    {
-        if(aName.size<=0)
-        {
-            AddOldUsers()
-        }
 
-    }
     fun AddOldUsers()
     {
-        aName.add("Granny")
-        aPassword.add("Tim")
-        aName.add("Granpa")
-        aPassword.add("Timmy")
-        aName.add("Timmy")
-        aPassword.add("Granny")
-
+        if(aName.size<=0) {
+            aName.add("Granny")
+            aPassword.add("Tim")
+            aName.add("Granpa")
+            aPassword.add("Timmy")
+            aName.add("Timmy")
+            aPassword.add("Granny")
+        }
     }
     fun AddNewUser(Name :String,Password:String)
     {

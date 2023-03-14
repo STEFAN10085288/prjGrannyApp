@@ -18,6 +18,7 @@ class Reg : AppCompatActivity() {
             var txtName: EditText = findViewById(R.id.txtNameReg)
             var txtPassword: EditText =findViewById(R.id.txtPasswordReg)
             val log = Login()
+            log.AddOldUsers()
             Log.d("AddNewUser","Pressed the reg button")
             log.AddNewUser(txtName.text.toString()
                 ,txtPassword.text.toString())
