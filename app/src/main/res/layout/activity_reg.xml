@@ -11,20 +11,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Granny App"
+        android:layout_marginEnd="3dp"
+        android:text="Granny App : Reg"
         android:textSize="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtName"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:text="Login"
+        android:layout_marginEnd="78dp"
+        android:text="Reg"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnRegPage"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -46,28 +46,28 @@
         android:id="@+id/txtPassword"
         android:layout_width="0dp"
         android:layout_height="57dp"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="116dp"
         android:layout_marginEnd="57dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="116dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegPage"
+        app:layout_constraintBottom_toBottomOf="@+id/btnReturn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="53dp"
         android:layout_marginEnd="42dp"
+        android:layout_marginBottom="8dp"
         android:text="Name:"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtName"
         app:layout_constraintEnd_toStartOf="@+id/txtName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -82,11 +82,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnRegPage"
+        android:id="@+id/btnReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:text="Reg page"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnLogin"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="Return"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnReg"
+        app:layout_constraintEnd_toStartOf="@+id/txtPassword"
+        app:layout_constraintStart_toStartOf="@+id/textView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

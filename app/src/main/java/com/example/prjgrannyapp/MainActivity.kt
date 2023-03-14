@@ -11,13 +11,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var btnLogin:Button = findViewById(R.id.button)
+        var btnLogin:Button = findViewById(R.id.btnLogin)
         btnLogin.setOnClickListener()
         {
             var txtName:EditText = findViewById(R.id.txtName)
             var txtPassword:EditText =findViewById(R.id.txtPassword)
-            Login().AddOldUsers()
-            var Shouldbeallowedin:Boolean =Login().checkUser(txtName.text.toString()
+            val log = Login()
+            log.AddOldUsers()
+            var Shouldbeallowedin:Boolean =log.checkUser(txtName.text.toString()
                 ,txtPassword.text.toString())
             if (Shouldbeallowedin)
             {
@@ -31,6 +32,13 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+        var btnReg:Button = findViewById(R.id.btnRegPage)
+        btnReg.setOnClickListener()
+        {
+            val intent = Intent(this,Reg::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }

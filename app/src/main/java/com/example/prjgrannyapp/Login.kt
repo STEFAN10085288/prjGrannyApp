@@ -23,7 +23,7 @@ class Login
     fun checkUser(Name :String,Password:String):Boolean
     {
         var bLoop =false
-        for (i in 0..aName.size)
+        for (i in 0..aName.size-1)
         {
             if ((aPassword[i].equals(Password))&&(aName[i].equals(Name)))
             {
