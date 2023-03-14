@@ -2,10 +2,21 @@ package com.example.prjgrannyapp
 
 import android.util.Log
 
+
 private var aName =  ArrayList<String>()
 private var aPassword= ArrayList<String>()
+
 class Login
 {
+
+    private fun Login()
+    {
+        if(aName.size<=0)
+        {
+            AddOldUsers()
+        }
+
+    }
     fun AddOldUsers()
     {
         aName.add("Granny")
@@ -21,6 +32,9 @@ class Login
         Log.d("AddNewUser","Name was :"+Name+" and Password was :"+Password)
         aName.add(Name)
         aPassword.add(Password)
+        Log.d("AddNewUser","Array is name:"+ aName.toString()+
+                "\n and Password is:"+aPassword.toString())
+
     }
     fun checkUser(Name :String,Password:String):Boolean
     {
