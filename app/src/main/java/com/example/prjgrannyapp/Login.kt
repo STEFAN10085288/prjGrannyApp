@@ -12,7 +12,8 @@ class Login
 
     fun AddOldUsers()
     {
-        if(aName.size<=0) {
+        if(aName.size<=0)
+        {
             aName.add("Granny")
             aPassword.add("Tim")
             aName.add("Granpa")
