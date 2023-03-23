@@ -6,15 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Welcome">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="252dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="61dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Feed"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
