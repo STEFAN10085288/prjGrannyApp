@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId "com.example.prjgrannyapp"
-        minSdk 25
+        minSdk 21
         targetSdk 33
         versionCode 1
-        versionName "1.0"
+        versionName "1.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

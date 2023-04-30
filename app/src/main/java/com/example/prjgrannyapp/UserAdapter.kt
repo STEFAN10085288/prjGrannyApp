@@ -18,10 +18,10 @@ import java.util.concurrent.Executors
 
 class UserAdapter :ListAdapter<User,UserAdapter.UserAdapter>(UserViewHolder())
 {
-    class UserAdapter(view : View):RecyclerView.ViewHolder(view)
-    {
+    //for passing details to detailed_item_activity
+    var onItemClick : ((User) ->  Unit)? = null
 
-    }
+    class UserAdapter(view : View):RecyclerView.ViewHolder(view) {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserAdapter {
         val inflater = LayoutInflater.from(parent.context)
@@ -30,6 +30,7 @@ class UserAdapter :ListAdapter<User,UserAdapter.UserAdapter>(UserViewHolder())
     }
 
     override fun onBindViewHolder(holder: UserAdapter, position: Int) {
+        //update filed with variables
         val user = getItem(position)
         holder.itemView.findViewById<TextView>(R.id.txtNameUser).text = user.Name
         holder.itemView.findViewById<TextView>(R.id.txtPasswordUser).text = user.Password
@@ -39,11 +40,11 @@ class UserAdapter :ListAdapter<User,UserAdapter.UserAdapter>(UserViewHolder())
         //initializing the image
         var image: Bitmap? = null
         val imageView = holder.itemView.findViewById<ImageView>(R.id.imPP)
+
         executor.execute {
             //image url
             val imageUrl = user.imageURL// added this
-            //Tries to get the image and post
-            // it in the imageview with the help of the handler
+            //Tries to get the image and post it in the imageview with the help of the handler
             try {
                 val `in` = java.net.URL(imageUrl).openStream()
                 image = BitmapFactory.decodeStream(`in`)
@@ -59,12 +60,17 @@ class UserAdapter :ListAdapter<User,UserAdapter.UserAdapter>(UserViewHolder())
                 e.printStackTrace()
             }
         }
+
         //button click listener
         holder.itemView.findViewById<Button>(R.id.btnUserAction).setOnClickListener{
             Log.d("AddNewUser", "Button Pressed ${user.Name} was pressed" )
+            onItemClick?.invoke(user)
+
         }
+
     }
 }
+//add and remove subscribers
 class UserViewHolder :DiffUtil.ItemCallback<User>()
 {
     override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {

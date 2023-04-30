@@ -10,7 +10,8 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
+
         var btnLogin:Button = findViewById(R.id.btnLogin)
         btnLogin.setOnClickListener()
         {
@@ -27,8 +28,7 @@ class MainActivity : AppCompatActivity() {
             }
             else
             {
-                Toast.makeText(this,"Wrong details entered or" +
-                        " else I did something wrong #rest if for homework :) ",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Incorrect credentials",Toast.LENGTH_SHORT).show()
             }
 
         }
